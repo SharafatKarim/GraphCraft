@@ -45,4 +45,4 @@ Feel free to contribute to this project by creating a pull request or submitting
 
 ## License
 
-This project is licensed under the MIT and [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+This project is licensed under the [MIT](LICENSE) and [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
