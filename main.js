@@ -223,7 +223,7 @@ function warTableDraw(n, arr, k) {
     if (n != k)
         caption.innerText = 'Warshall\'s Matrix after ' + k + ' iteration';
     else 
-        caption.innerText = 'Warshall\'s Matrix after final iteration (shortest path or path matrix)';
+        caption.innerText = 'Warshall\'s Matrix after final iteration (shortest path or path matrix from a point to another)';
 
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
@@ -269,17 +269,19 @@ function pathMatrix(n, arr) {
     console.log("arr : ", arr);
     var arr_one = [];
     var arr_two = [];
+    var arr_sum = [];
     for (var i = 0; i < n; i++) {
         arr_one[i] = [];
         arr_two[i] = [];
+        arr_sum[i] = [];
         for (var j = 0; j < n; j++) {
             arr_one[i][j] = parseInt(arr[i][j]);
-            arr[i][j] = parseInt(arr[i][j]);
+            arr_sum[i][j] = parseInt(arr[i][j]);
         }
     }
     console.log("arr_one : ", arr_one);
 
-    for (var loop = 0; loop < n; loop++) {
+    for (var loop = 0; loop < n-1; loop++) {
         for (var i = 0; i < n; i++) {
             for (var j = 0; j < n; j++) {
                 var sum = 0;
@@ -290,7 +292,15 @@ function pathMatrix(n, arr) {
             }
         }
         printTableMatrix(n, arr_two, loop + 1);
+        for (var i = 0; i < n; i++) {
+            for (var j = 0; j < n; j++) {
+                arr_one[i][j] = arr_two[i][j];
+                arr_sum[i][j] = arr_sum[i][j] + arr_two[i][j];
+            }
+        }
     }
+
+    printTableMatrix(n, arr_sum, n);
 }
 
 function printTableMatrix(n, arr_temp, loop) {
@@ -301,9 +311,9 @@ function printTableMatrix(n, arr_temp, loop) {
     // caption
     var caption = table.createCaption();
     if (n != loop)
-        caption.innerText = 'Path Matrix after ' + loop + ' iteration';
+        caption.innerText = 'Path Matrix after raising to the power ' + (loop + 1);
     else 
-        caption.innerText = 'Path Matrix after final iteration';
+        caption.innerText = 'Path Matrix after final iteration (You can consider non-zero values as 1)';
 
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
