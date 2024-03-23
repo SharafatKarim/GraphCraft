@@ -1,3 +1,9 @@
+(function () {
+    // clear the input field on load
+    document.getElementById('adjMatInp').value = ""
+})();
+
+
 var cy = cytoscape({
     container: document.getElementById('cy'),
     layout: {
