@@ -40,6 +40,7 @@ To use Graph Craft, follow these steps:
 ## Contributors
 
 [![SharafatKarim's Profilator](https://profilator.deno.dev/SharafatKarim?v=1.0.0.alpha.4)](https://github.com/SharafatKarim)
+[![sr-tamim's Profilator](https://profilator.deno.dev/sr-tamim?v=1.0.0.alpha.4)](https://github.com/sr-tamim)
 
 Feel free to contribute to this project by creating a pull request or submitting an issue.
 
