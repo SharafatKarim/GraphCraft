@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sharafat.is-a.dev/GraphCraft/sitemap.xml
